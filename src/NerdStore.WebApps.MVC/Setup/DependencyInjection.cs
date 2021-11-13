@@ -6,6 +6,9 @@ using NerdStore.Catalogo.Data.Repository;
 using NerdStore.Catalogo.Domain;
 using NerdStore.Core.Bus;
 using NerdStore.Vendas.Application.Commands;
+using NerdStore.Vendas.Data;
+using NerdStore.Vendas.Data.Repository;
+using NerdStore.Vendas.Domain;
 
 namespace NerdStore.WebApps.MVC.Setup
 {
@@ -18,11 +21,14 @@ namespace NerdStore.WebApps.MVC.Setup
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IProdutoAppService, ProdutoAppService>();
             services.AddScoped<IEstoqueService, EstoqueService>();
+
             services.AddScoped<CatalogoContext>();
 
             //Vendas
 
             services.AddScoped<IRequestHandler<AdicionarItemPedidoCommand,bool>,PedidoCommandHandler>();
+            
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
         }
     }
 }
