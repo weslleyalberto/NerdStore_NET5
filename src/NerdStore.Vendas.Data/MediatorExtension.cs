@@ -1,4 +1,4 @@
-﻿using NerdStore.Core.Bus;
+﻿using NerdStore.Core.Comunication.Mediator;
 using NerdStore.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
